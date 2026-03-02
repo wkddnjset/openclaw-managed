@@ -25,9 +25,32 @@ import Image from "next/image";
 import { ContactForm } from "./components/ContactForm";
 import { AnnouncementPopup } from "./components/AnnouncementPopup";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "오픈클로 (OpenClaw) Managed",
+  description:
+    "월 99,000원으로 구독하는 완전 관리형 AI 에이전트 서비스. 슬랙·텔레그램·디스코드 연동, 세팅 없이 바로 사용 가능.",
+  offers: {
+    "@type": "Offer",
+    price: "99000",
+    priceCurrency: "KRW",
+    priceValidUntil: "2026-12-31",
+    availability: "https://schema.org/InStock",
+  },
+  brand: {
+    "@type": "Brand",
+    name: "OpenClaw Managed",
+  },
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <AnnouncementPopup />
       {/* Navigation (shadcn topbar style) */}
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
