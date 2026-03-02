@@ -23,10 +23,12 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { ContactForm } from "./components/ContactForm";
+import { AnnouncementPopup } from "./components/AnnouncementPopup";
 
 export default function Home() {
   return (
     <>
+      <AnnouncementPopup />
       {/* Navigation (shadcn topbar style) */}
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -205,7 +207,7 @@ export default function Home() {
             <div className="mb-12 max-w-2xl">
               <h2 className="text-3xl font-bold tracking-tight mb-4">어떤 걸 할 수 있나요?</h2>
               <p className="text-muted-foreground text-lg">
-                OpenClaw가 기본 제공하는 수천 개의 스킬(Skill)들을 자유롭게 활용하세요. 지시에
+                OpenClaw가 기본 제공하는 수십 개의 스킬(Skill)들을 자유롭게 활용하세요. 지시에
                 따라 즉시 실행하는 진짜 &apos;비서&apos;가 생깁니다.
               </p>
             </div>
@@ -290,8 +292,124 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Security */}
+        {/* Case Studies */}
         <section className="py-24 border-t border-border bg-muted/30">
+          <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 max-w-2xl">
+              <h2 className="text-3xl font-bold tracking-tight mb-4">실제 구축 사례</h2>
+              <p className="text-muted-foreground text-lg">
+                OpenClaw Managed로 이미 시작한 팀들의 이야기입니다.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-6">
+              {/* Case 1 */}
+              <div className="rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col">
+                <div className="p-6 border-b border-border bg-muted/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-blue-700 shrink-0">
+                      <Blocks className="w-4 h-4" />
+                    </div>
+                    <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                      콘텐츠 마케팅
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-lg leading-tight">
+                    콘텐츠 마케팅 에이전시 팀 AI
+                  </h3>
+                </div>
+                <div className="p-6 flex-1 flex flex-col gap-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    영업, 마케팅, 기술 등을 담당하는 <strong className="text-foreground">6개 AI 에이전트</strong>로 구성한
+                    자율 실행 팀입니다. 슬랙으로 연동해 실제 고객을 발굴하고, 프로젝트 실행까지
+                    자동으로 진행합니다.
+                  </p>
+                  <div className="mt-auto space-y-2">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <MessageSquare className="w-3.5 h-3.5 shrink-0" />
+                      <span>Slack 연동</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Users className="w-3.5 h-3.5 shrink-0" />
+                      <span>6개 역할 분리 에이전트 운영</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Case 2 */}
+              <div className="rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col">
+                <div className="p-6 border-b border-border bg-muted/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-100 text-emerald-700 shrink-0">
+                      <RefreshCcw className="w-4 h-4" />
+                    </div>
+                    <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                      투자 자동화
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-lg leading-tight">
+                    주식 투자 AI 에이전트
+                  </h3>
+                </div>
+                <div className="p-6 flex-1 flex flex-col gap-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    매일 시장 데이터를 수집·분석해 <strong className="text-foreground">전략적 투자를 직접 실행</strong>하고
+                    결과를 보고합니다. 포트폴리오 조정과 다양한 매매 방식을 스스로 시도하며
+                    지속적으로 개선합니다.
+                  </p>
+                  <div className="mt-auto space-y-2">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Globe className="w-3.5 h-3.5 shrink-0" />
+                      <span>실시간 데이터 수집 및 분석</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <Send className="w-3.5 h-3.5 shrink-0" />
+                      <span>Telegram으로 일일 결과 보고</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Case 3 */}
+              <div className="rounded-xl border bg-card text-card-foreground shadow-sm overflow-hidden flex flex-col">
+                <div className="p-6 border-b border-border bg-muted/20">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-purple-100 text-purple-700 shrink-0">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <span className="text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full">
+                      SNS 자동화
+                    </span>
+                  </div>
+                  <h3 className="font-semibold text-lg leading-tight">
+                    AI 인플루언서
+                  </h3>
+                </div>
+                <div className="p-6 flex-1 flex flex-col gap-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    영상을 기획하고 <strong className="text-foreground">직접 편집·발행</strong>하는 것까지 자동으로
+                    진행합니다. 여러 SNS 채널을 동시에 관리하며 콘텐츠 파이프라인 전체를
+                    운영합니다.
+                  </p>
+                  <div className="mt-auto space-y-2">
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <TerminalSquare className="w-3.5 h-3.5 shrink-0" />
+                      <span>영상 편집 자동화</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <MessageSquare className="w-3.5 h-3.5 shrink-0" />
+                      <span>다채널 SNS 동시 관리</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Security */}
+        <section className="py-24 border-t border-border bg-background">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col lg:flex-row gap-16 items-center">
               <div className="w-full lg:w-1/2 order-2 lg:order-1 relative">
@@ -367,8 +485,8 @@ export default function Home() {
             <div className="max-w-2xl mx-auto text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tight mb-4">도입이 망설여지시나요?</h2>
               <p className="text-muted-foreground text-lg">
-                개발 지식이 없어도 괜찮습니다. 고객님의 업무 환경에 딱 맞는 에이전트 활용법을{" "}
-                <strong>무료로 컨설팅</strong>해 드리고 있습니다.
+                개발 지식이 없어도 괜찮습니다. 고객님의 업무 환경에 딱 맞는<br />에이전트 활용법을{" "}
+                <strong>컨설팅</strong>해 드리고 있습니다.
               </p>
             </div>
 
