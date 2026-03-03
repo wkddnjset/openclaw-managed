@@ -22,7 +22,6 @@ import {
   Twitter,
 } from "lucide-react";
 import Image from "next/image";
-import { ContactForm } from "./components/ContactForm";
 import { AnnouncementPopup } from "./components/AnnouncementPopup";
 
 const jsonLd = {
@@ -66,7 +65,7 @@ export default function Home() {
             </div>
             <nav className="flex items-center gap-4">
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2"
               >
                 도입 문의
@@ -103,7 +102,7 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <a
-                href="#contact"
+                href="/contact"
                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 py-2"
               >
                 에이전트 구축하기
@@ -502,18 +501,23 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA & Contact Form */}
-        <section id="contact" className="py-24 border-t border-border bg-background">
+        {/* CTA */}
+        <section className="py-24 border-t border-border bg-background">
           <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-2xl mx-auto text-center mb-12">
+            <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl font-bold tracking-tight mb-4">도입이 망설여지시나요?</h2>
-              <p className="text-muted-foreground text-lg">
+              <p className="text-muted-foreground text-lg mb-8">
                 개발 지식이 없어도 괜찮습니다. 고객님의 업무 환경에 딱 맞는<br />에이전트 활용법을{" "}
                 <strong>컨설팅</strong>해 드리고 있습니다.
               </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 py-2"
+              >
+                도입 문의하기
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </a>
             </div>
-
-            <ContactForm />
           </div>
         </section>
       </main>
