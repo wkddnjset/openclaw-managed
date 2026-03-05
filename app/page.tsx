@@ -22,7 +22,6 @@ import {
   Twitter,
 } from "lucide-react";
 import Image from "next/image";
-import { AnnouncementPopup } from "./components/AnnouncementPopup";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -50,7 +49,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <AnnouncementPopup />
       {/* Navigation (shadcn topbar style) */}
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -523,22 +521,42 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-background py-8">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2 font-semibold">
-            <Cpu className="w-5 h-5 text-muted-foreground" />
-            <span className="text-muted-foreground">OpenClaw.managed</span>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            &copy; 2026 OpenClaw Managed Service. All rights reserved.
-          </p>
-          <div className="flex gap-4">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Github className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
+      <footer className="border-t border-border bg-background py-10">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row justify-between gap-8">
+            <div>
+              <div className="flex items-center gap-2 font-semibold mb-4">
+                <div className="bg-primary text-primary-foreground p-1 rounded-md">
+                  <Cpu className="w-4 h-4" />
+                </div>
+                <span>
+                  OpenClaw<span className="text-muted-foreground font-normal">.managed</span>
+                </span>
+              </div>
+              <div className="space-y-1 text-xs text-muted-foreground leading-relaxed">
+                <p>(주)똑똑한개발자 | 대표 서장원</p>
+                <p>사업자등록번호 426-81-00521</p>
+                <p>서울특별시 마포구 홍익로5안길 28, 5층</p>
+                <p>
+                  <a href="https://toktokhan.dev" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors underline underline-offset-2">
+                    toktokhan.dev
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-col items-start md:items-end justify-between gap-4">
+              <div className="flex gap-4">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Github className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  <Twitter className="w-5 h-5" />
+                </a>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                &copy; 2026 (주)똑똑한개발자. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       </footer>
