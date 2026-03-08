@@ -21,7 +21,7 @@ const LOOP_DELAY = 8500;
 export function HeroTerminal() {
   const [count, setCount] = useState(0);
   const [loopKey, setLoopKey] = useState(0);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -37,9 +37,11 @@ export function HeroTerminal() {
     return () => timers.forEach(clearTimeout);
   }, [loopKey]);
 
-  // 항상 스크롤 하단 유지
+  // 항상 스크롤 하단 유지 (page scroll 방지 위해 scrollTop 직접 제어)
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
   }, [count]);
 
   const activeItems = SEQUENCE.slice(0, count);
@@ -85,6 +87,7 @@ export function HeroTerminal() {
 
       {/* ── Messages ── */}
       <div
+        ref={scrollRef}
         className="h-[296px] overflow-y-auto px-4 py-4 space-y-3"
         style={{ scrollbarWidth: "none" }}
       >
@@ -158,8 +161,6 @@ export function HeroTerminal() {
           </div>
         )}
 
-        {/* 스크롤 앵커 */}
-        <div ref={bottomRef} />
       </div>
 
       {/* ── Input bar ── */}

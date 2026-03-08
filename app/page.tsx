@@ -128,7 +128,7 @@ export default function Home() {
         {/* ─────────────────────────────────────────────────────────
             FEATURE GRID
         ───────────────────────────────────────────────────────── */}
-        <section id="features" className="bg-[#0f0f0f] border-t border-white/[0.05]">
+        <section id="features" className="bg-[#0f0f0f] border-t border-white/[0.05] scroll-mt-14">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
             <RevealSection className="mb-14">
               <p className="font-mono text-[10px] text-zinc-600 uppercase tracking-widest mb-3">// 핵심 기능</p>
@@ -270,7 +270,7 @@ export default function Home() {
         {/* ─────────────────────────────────────────────────────────
             CASE STUDIES
         ───────────────────────────────────────────────────────── */}
-        <section id="cases" className="py-28 bg-white border-t border-border">
+        <section id="cases" className="py-28 bg-white border-t border-border scroll-mt-14">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <RevealSection className="mb-16">
               <p className="font-mono text-[10px] text-zinc-500 uppercase tracking-widest mb-3">
